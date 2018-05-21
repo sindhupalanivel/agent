@@ -1,0 +1,29 @@
+<div class="row">
+
+    <div class="container-fluid text-center" id="headerback">
+        <i class="fa fa-arrow-left float-left"></i>
+        <form class=" col-md-12 text-center reg " #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" >
+          
+            <h4>Please let us know who to register.</h4>
+            <input type="text" name="fullname" placeholder="Full Name" class=" form-group numinput text-center" #fullname="ngModel" [(ngModel)] ="clientService.selectedClient.fullname" required minlength="5" maxlength="30" ><br><br>
+            
+            <input type="text" name="brokerage" placeholder="Brokerage" class="form-group numinput text-center" #brokerage="ngModel" [(ngModel)] ="clientService.selectedClient.brokerage" required><br><br>
+            
+            <input type="email" name="email" placeholder="Email Address" class="form-group numinput text-center" #email="ngModel" [(ngModel)] ="clientService.selectedClient.email" required pattern="[^@]*@[^@]*"><br><br>
+            
+            <input type="tel" name="phone" placeholder="Phonenumber" class=" form-group numinput text-center"  #phone="ngModel" [(ngModel)] ="clientService.selectedClient.phone" required pattern="[0-9]+" maxlength="10"><br><br>
+            
+            <div class="row">
+                <button type="submit" class="btn btn1 mx-auto" [disabled]="!registerForm.valid">REGISTER ME</button>
+              
+             </div>
+           
+             
+    
+            <p>Already have an account?
+                <a routerLink="/login">Sign In</a>
+            </p>
+    
+        </form>
+      </div>
+</div>
